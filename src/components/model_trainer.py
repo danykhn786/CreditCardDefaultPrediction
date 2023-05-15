@@ -1,7 +1,7 @@
 # Basic Import
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from src.exception import CustomException
 from src.logger import logging
 
@@ -32,7 +32,7 @@ class ModelTrainer:
             )
 
             models={
-            'LogisticRegression':LogisticRegression()
+            'RandomForestClassifier':RandomForestClassifier()
         }
             
             model_report:dict=evaluate_model(X_train,y_train,X_test,y_test,models)

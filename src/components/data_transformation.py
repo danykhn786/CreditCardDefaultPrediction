@@ -16,9 +16,7 @@ from src.utils import save_object
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join('artifacts','preprocessor.pkl')
-    ##To Remove
-    temp_file_path_train=os.path.join('artifacts','test_train1.csv')
-    temp_file_path_test=os.path.join('artifacts','test_test1.csv')
+
 
 class DataTransformation:
     def __init__(self):
@@ -96,14 +94,6 @@ class DataTransformation:
 
             train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
-
-            ## To remove
-            """
-            train_df1 = pd.DataFrame(train_arr)
-            test_df1 = pd.DataFrame(test_arr)
-            train_df1.to_csv(self.data_transformation_config.temp_file_path_train,index=False,header=True)
-            test_df1.to_csv(self.data_transformation_config.temp_file_path_test,index=False,header=True)
-            """
 
             save_object(
 

@@ -9,7 +9,7 @@ app=application
 
 @app.route('/')
 def home_page():
-    return render_template('index.html')
+    return render_template('form.html')
 
 @app.route('/predict',methods=['GET','POST'])
 
@@ -34,17 +34,17 @@ def predict_datapoint():
             PAY_AMT6 = float(request.form.get('PAY_AMT6'))  
         )
         final_new_data=data.get_data_as_dataframe()
-        print(f"{final_new_data}")
+        #print(f"{final_new_data}")
         predict_pipeline=PredictPipeline()
         pred=predict_pipeline.predict(final_new_data)
         print(pred)
         results = pred[0]
-
-        return render_template('results.html',final_result=results)
-
-
-
-
+        if (results==1):
+            results = "Defaulter"
+        else:
+            results = "Not Defaulter"
+            
+        return render_template('form.html',final_result=results)
 
 
 if __name__=="__main__":
