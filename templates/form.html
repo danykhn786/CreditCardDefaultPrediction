@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Credit Card Default Prediction</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #f2f2f2;
+            }
+            form {
+                background-color: #ffffff;
+                padding: 20px;
+                max-width: 500px;
+                margin: 0 auto;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            label {
+                display: block;
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            input[type="text"] {
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                padding: 10px;
+                font-size: 16px;
+                width: 100%;
+                box-sizing: border-box;
+                margin-top: 5px;
+                margin-bottom: 15px;
+            }
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 18px;
+                margin-top: 10px;
+            }
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+        </style>    
+    </head>
+<body>
+<form action="{{url_for('predict_datapoint')}}" method="POST">
+    <div class="form-group">
+        <label for="LIMIT_BAL">LIMIT_BAL:</label>
+        <input type="text" id="LIMIT_BAL" name="LIMIT_BAL" placeholder="Enter LIMIT_BAL value ">
+    </div>
+
+    <div class="form-group">
+        <label for="SEX">SEX:</label>
+        <input type="text" id="SEX" name="SEX" placeholder="Enter SEX value ">
+    </div>
+
+    <div class="form-group">  
+        <label for="EDUCATION">EDUCATION:</label>
+        <input type="text" id="EDUCATION" name="EDUCATION" placeholder="Enter EDUCATION value ">
+    </div>
+    
+    <div class="form-group">
+        <label for="MARRIAGE">MARRIAGE:</label>
+        <input type="text" id="MARRIAGE" name="MARRIAGE" placeholder="Enter MARRIAGE value ">
+    </div>
+  
+    <div class="form-group">
+        <label for="AGE">AGE:</label>
+        <input type="AGE" id="AGE" name="AGE" placeholder="Enter AGE value ">
+    </div>
+  
+    <div class="form-group">
+        <label for="PAY_0">PAY_0:</label>
+        <input type="text" id="PAY_0" name="PAY_0" placeholder="Enter PAY_0 value ">
+    </div>        
+    <div class="form-group">
+        <label for="BILL_AMT1">BILL_AMT1:</label>
+        <input type="text" id="BILL_AMT1" name="BILL_AMT1" placeholder="Enter BILL_AMT1 value ">
+    </div>   
+    <div class="form-group">
+        <label for="PAY_AMT1">PAY_AMT1:</label>
+        <input type="text" id="PAY_AMT1" name="PAY_AMT1" placeholder="Enter PAY_AMT1 value ">
+    </div>   
+    <div class="form-group">
+        <label for="PAY_AMT2">PAY_AMT2:</label>
+        <input type="text" id="PAY_AMT2" name="PAY_AMT2" placeholder="Enter PAY_AMT2 value ">
+    </div>  
+    <div class="form-group">
+        <label for="PAY_AMT3">PAY_AMT3:</label>
+        <input type="text" id="PAY_AMT3" name="PAY_AMT3" placeholder="Enter PAY_AMT3 value ">
+    </div>    
+    <div class="form-group">
+        <label for="PAY_AMT4">PAY_AMT4:</label>
+        <input type="text" id="PAY_AMT4" name="PAY_AMT4" placeholder="Enter PAY_AMT4 value ">
+    </div>   
+    <div class="form-group">
+        <label for="PAY_AMT5">PAY_AMT5:</label>
+        <input type="text" id="PAY_AMT5" name="PAY_AMT5" placeholder="Enter PAY_AMT5 value ">
+    </div>    
+    <div class="form-group">
+        <label for="PAY_AMT6">PAY_AMT6:</label>
+        <input type="text" id="PAY_AMT6" name="PAY_AMT6" placeholder="Enter PAY_AMT6 value ">
+    </div> 
+
+<div style="clear:both;"></div>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
